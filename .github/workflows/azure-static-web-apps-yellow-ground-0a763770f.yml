@@ -12,14 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Deploy static files directly from repo root
-      - name: Deploy to Azure Static Web Apps
+      - name: Deploy to Azure Static Web Apps (static files, root)
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          #### Paths for a plain HTML/CSS site:
-          app_location: "/"          # where index.html lives
-          api_location: ""           # no API
-          output_location: ""        # no build output
+          action: upload
+          app_location: .          # root of repo where index.html is
+          skip_app_build: true     # don't try to build anything
