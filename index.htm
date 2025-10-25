@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>True North Equestrian Center — Equine Boarding</title>
+  <meta name="description" content="Premium equine boarding with online payments for monthly board and fees." />
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css?v=4">
+  
+  </style>
+</head>
+<body>
+ <!-- Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Home">
+      <!-- Optional logo image -->
+      <img class="brand-logo" src="images/TrueNorthLogo.png" alt="True North Equestrian Center logo" />
+      <span class="brand-name" id="brandName">True North Equestrian Center</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#services" class="nav-link">Boarding</a>
+      <a href="#amenities" class="nav-link">Amenities</a>
+      <a href="announcements.html" class="nav-link">Announcements</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#boarderlogin" class="nav-link">Boarder Login</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <!-- Replace URL or set in admin; app.js updates #heroImg -->
+        <img id="heroImg" src="./images/Barnflyover.jpg" alt="Boarding Facility with sunset">
+      </div>
+      <div class="container hero-content">
+        <h1>Care and comfort, convienantly located in beautiful Rives township</h1>
+        <p>Premium equine boarding with attentive care, safe facilities, and scheduled turnouts.</p>
+        <div class="hero-cta">
+            <a class="btn btn-outline btn-lg" href="#contact">Book a Tour</a>
+        </div>
+      </div>
+    </section>
+    <!-- Highlights -->
+    <section id="services" class="section">
+      <div class="container grid-3">
+        <article class="card">
+          <h3>Full-Care Boarding</h3>
+          <p>Daily turnout, high-quality forage, individualized feeding plans, and clean stalls.</p>
+        </article>
+        <article class="card">
+          <h3>Experienced Staff</h3>
+          <p>On-site caretakers and trusted partnerships with local veterinarians and farriers.</p>
+        </article>
+        <article class="card">
+          <h3>Simple Payments</h3>
+          <p>Pay monthly board and incidental fees securely through the Boarder Portal.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section id="amenities" class="section alt">
+      <div class="container grid-3">
+        <div class="card">
+          <h3>Safe Facilities</h3>
+          <ul class="checklist">
+            <li>Large, well-maintained stalls</li>
+            <li>Daily turnout in secure paddocks</li>
+            <li>Fresh water systems</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Training & Riding</h3>
+          <ul class="checklist">
+            <li>Outdoor arena with good footing</li>
+            <li>Round pen and trails nearby</li>
+            <li>Trailer parking</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Care Network</h3>
+          <ul class="checklist">
+            <li>Trusted farrier schedule</li>
+            <li>Preferred veterinary partners</li>
+            <li>Emergency care protocols</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2>Get in touch</h2>
+          <p>Questions or ready to visit? We’d love to show you around.</p>
+          <p class="contact-lines">
+            <strong>Email:</strong> info@yourfacility.com<br/>
+            <strong>Phone:</strong> (555) 123-4567<br/>
+            <strong>Address:</strong> 123 Country Lane, YourTown, ST
+          </p>
+        </div>
+        <form class="card contact-form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.'); this.reset();">
+          <label>
+            <span>Name</span>
+            <input type="text" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea rows="4" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <span id="brandNameFooter">[Facility Name]</span>. All rights reserved.</p>
+      <a href="dashboard.html" class="footer-link">Boarder Login</a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="./app.js?v=4"></script>
+  <script>
+    // keep footer brand in sync if desired
+    const b = document.getElementById('brandName');
+    const f = document.getElementById('brandNameFooter');
+    if (b && f) f.textContent = b.textContent;
+  </script>
+</body>
+</html>

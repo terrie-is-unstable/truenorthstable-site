@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin — [Facility Name]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard">
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html"><span class="brand-mark">🐴</span><span class="brand-name">[Facility Name] Admin</span></a>
+<nav class="nav">
+<a class="nav-link" href="index.html">Site</a>
+<a class="nav-link" href="dashboard.html">Boarder Portal</a>
+</nav>
+<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+</div>
+</header>
+
+
+<main class="section">
+<div class="container">
+<div id="adminLock" class="card" style="display:none">
+<h2>Admin Access</h2>
+<p class="hint">Set a PIN for the first time, or enter the PIN to unlock.</p>
+<form id="pinForm" class="admin-form">
+<label><span>PIN</span><input id="pinInput" type="password" required minlength="4" maxlength="32"></label>
+<div class="row">
+<button id="setPinBtn" class="btn btn-outline" type="button">Set/Change PIN</button>
+<button id="unlockBtn" class="btn btn-primary" type="button">Unlock</button>
+</div>
+</form>
+</div>
+
+
+<div id="adminApp" style="display:none">
+<div class="grid-admin">
+<!-- Site Basics -->
+<section class="card">
+<h2>Site Basics</h2>
+<form id="basicsForm" class="admin-form">
+<label><span>Facility name</span><input id="brandNameInput" type="text" placeholder="e.g., Willow Creek Stables" required></label>
+<label><span>Hero image</span><input id="heroUrlInput" type="url" placeholder="https://..."/></label>
+<label><span>Or upload hero image</span><input id="heroFileInput" type="file" accept="image/*" /></label>
+<label><span>Contact email</span><input id="contactEmailInput" type="email" placeholder="info@yourfacility.com"></label>
+<label><span>Contact phone</span><input id="contactPhoneInput" type="tel" placeholder="(555) 123‑4567"></label>
+<label><span>Address</span><input id="contactAddrInput" type="text" placeholder="123 Country Lane, YourTown, ST"></label>
+<div class="row"><button class="btn btn-primary" type="submit">Save Basics</button></div>
+</form>
+</section>
+
+
+<!-- Payments -->
+<section class="card">
+<h2>Payment Links</h2>
+<form id="paymentsForm" class="admin-form">
+<label><span>Monthly Board link (Stripe/PayPal/etc.)</span><input id="boardLinkInput" type="url" placeholder="https://..." required></label>
+<label><span>Other Fees link</span><input id="otherLinkInput" type="url" placeholder="https://..." required></label>
+<label><span>Board Plans</span></label>
+<div id="plansList" class="list"></div>
+<div class="row">
+<input id="planLabel" type="text" placeholder="Plan name (e.g., Stall)"/>
+<input id="planAmount" type="number" inputmode="decimal" min="0" step="0.01" placeholder="Amount"/>
+<button id="addPlanBtn" class="btn btn-outline" type="button">Add Plan</button>
+</div>
+<div class="row"><button class="btn btn-primary" type="submit">Save Payment Settings</button></div>
+</form>
+</section>
+
+
+<!-- Horses -->
+</html>

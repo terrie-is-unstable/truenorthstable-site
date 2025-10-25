@@ -1,0 +1,35 @@
+Love this idea, Terrie — clean, beautiful, and simple for boarders. I’ve dropped a starter site in the canvas with four files: `index.html`, `dashboard.html`, `styles.css`, and `app.js`. It includes:
+
+* A polished landing page (hero + highlights + contact)
+* A Boarder Portal page with:
+
+  * Upcoming farrier/vet dates & news (demo data you can replace)
+  * Two payment cards:
+
+    * Monthly Board (select horse, plan, month)
+    * Other Fees (farrier, vet, blanket repair, etc., with notes)
+* Modern, professional CSS (dark, elegant, accessible, responsive)
+* Lightweight JS to handle form validation + redirects to your payment provider
+
+### How payments will work
+
+Right now the JS has placeholders for two links:
+
+* `BOARD_PAYMENT_URL`
+* `OTHER_FEES_URL`
+
+Create live **Payment Links** (Stripe is easiest) and paste them into `app.js`. If you need variable amounts for “Other Fees,” make that link a donation/variable-price style so the boarder can enter any amount. If you’d prefer PayPal or Square, we can wire those up too.
+
+### What I need from you
+
+* Your preferred **payment processor** (Stripe/PayPal/Square)
+* The **facility name** and any brand colors (if you have them)
+* Your **hero and gallery photos** (I’ll swap them in and tune the layout)
+
+Want me to:
+
+1. hook up real Stripe links,
+2. swap in your photos and name,
+3. add a tiny admin page so you can post farrier/vet dates without touching code?
+
+Say the word and I’ll update the canvas accordingly.

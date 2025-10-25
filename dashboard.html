@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Boarder Portal — [Facility Name]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard">
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html">
+<span class="brand-mark" aria-hidden="true">🐴</span>
+<span class="brand-name">[Facility Name]</span>
+</a>
+<nav class="nav">
+<a href="index.html#contact" class="nav-link">Contact</a>
+<button id="logoutBtn" class="btn btn-quiet">Log out</button>
+</nav>
+<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+</div>
+</header>
+
+
+<main class="section">
+<div class="container grid-dashboard">
+<!-- Sidebar: Dates & News -->
+<aside class="card sidebar">
+<h2>Upcoming Care</h2>
+<ul class="events" id="eventsList">
+<!-- Populated from app.js (demo data); replace with CMS/API later -->
+</ul>
+<h2>News</h2>
+<ul class="news" id="newsList"></ul>
+</aside>
+
+
+<!-- Main: Payments -->
+<section class="card">
+<h2>Payments</h2>
+<div class="payment-grid">
+<form id="boardPaymentForm" class="payment-card">
+<h3>Monthly Board</h3>
+<label>
+<span>Select horse</span>
+<select id="horseSelect" required>
+<option value="" disabled selected>Select…</option>
+<option>Buddy</option>
+<option>Star</option>
+<option>Daisy</option>
+</select>
+</label>
+<label>
+<span>Board plan</span>
+<select id="boardPlan" required>
+<option value="" disabled selected>Select…</option>
+<option value="600">Pasture — $600</option>
+<option value="850">Stall — $850</option>
+<option value="1000">Stall + Training — $1,000</option>
+</select>
+</label>
+<label>
+<span>Month</span>
+<input id="boardMonth" type="month" required />
+</label>
+<button class="btn btn-primary" type="submit">Pay Monthly Board</button>
+<p class="hint">You’ll be redirected to our secure payment page.</p>
+</form>
+
+
+</html>
