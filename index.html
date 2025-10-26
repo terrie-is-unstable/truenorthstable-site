@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css?v=4">
   
-  </style>
+  
 </head>
 <body>
  <!-- Header -->
@@ -24,15 +24,15 @@
       <span class="brand-name" id="brandName">True North Equestrian Center</span>
     </a>
 
-    <nav class="nav">
+    <nav id="siteNav" class="nav">
       <a href="#services" class="nav-link">Boarding</a>
       <a href="#amenities" class="nav-link">Amenities</a>
       <a href="announcements.html" class="nav-link">Announcements</a>
       <a href="#contact" class="nav-link">Contact</a>
-      <a href="#boarderlogin" class="nav-link">Boarder Login</a>
+      <a href="dashboard.html" class="nav-link">Boarder Login</a>
     </nav>
 
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <button class="nav-toggle" aria-controls="siteNav" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
   </div>
 </header>
 
@@ -125,6 +125,35 @@
 
   <!-- JS -->
   <script src="./app.js?v=4"></script>
+<script>
+(function(){
+  function initNav(){
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('siteNav') || document.querySelector('.nav');
+    if(!toggle || !nav) return;
+    function setOpen(isOpen){
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      nav.classList.toggle('nav--open', isOpen);
+    }
+    if(!toggle.dataset.bound){
+      toggle.addEventListener('click', function(){
+        var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        setOpen(!isOpen);
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setOpen(false);
+      });
+      toggle.dataset.bound = '1';
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNav);
+  } else {
+    initNav();
+  }
+})();
+</script>
+
   <script>
     // keep footer brand in sync if desired
     const b = document.getElementById('brandName');

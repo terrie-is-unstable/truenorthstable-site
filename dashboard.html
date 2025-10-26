@@ -1,74 +1,300 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Boarder Portal — [Facility Name]</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>True North Equestrian Center — Equine Boarding</title>
+  <meta name="description" content="Premium equine boarding with online payments for monthly board and fees." />
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css?v=4">
+  
+  
 </head>
-<body class="dashboard">
+<body>
 <header class="site-header">
-<div class="container header-inner">
-<a class="brand" href="index.html">
-<span class="brand-mark" aria-hidden="true">🐴</span>
-<span class="brand-name">[Facility Name]</span>
-</a>
-<nav class="nav">
-<a href="index.html#contact" class="nav-link">Contact</a>
-<button id="logoutBtn" class="btn btn-quiet">Log out</button>
-</nav>
-<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-</div>
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Home">
+      <!-- Optional logo image -->
+      <img class="brand-logo" src="images/TrueNorthLogo.png" alt="True North Equestrian Center logo" />
+      <span class="brand-name" id="brandName">True North Equestrian Center</span>
+    </a>
+
+    <nav id="siteNav" class="nav">
+      <a href="#services" class="nav-link">Boarding</a>
+      <a href="#amenities" class="nav-link">Amenities</a>
+      <a href="announcements.html" class="nav-link">Announcements</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="dashboard.html" class="nav-link">Boarder Login</a>
+    </nav>
+
+    <button class="nav-toggle" aria-controls="siteNav" aria-label="Open menu" aria-expanded="false" type="button">☰</button>
+  </div>
 </header>
+<main>
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Welcome, <span id="boarderName">Boarder</span></h1>
+      <p>Your boarder ID: <strong id="boarderId">#B-00000</strong></p>
+      <div class="hero-cta">
+        <a class="btn btn-outline btn-lg" href="#billing">View Charges &amp; Pay</a>
+      </div>
+    </div>
+  </section>
 
+  <section class="section">
+    <div class="container grid-3">
+      <article class="card">
+        <h3>Update Vet &amp; Care Info</h3>
+        <p>Keep your horse's health records and care directives up to date.</p>
+        <a class="btn btn-primary" href="#care">Update Care</a>
+      </article>
+      <article class="card">
+        <h3>Upload Documents</h3>
+        <p>Insurance, vaccination records, Coggins, prescriptions, rider waivers.</p>
+        <a class="btn btn-primary" href="#uploads">Upload Files</a>
+      </article>
+      <article class="card">
+        <h3>Payment Methods</h3>
+        <p>Manage card/bank info and AutoPay for monthly board.</p>
+        <a class="btn btn-primary" href="#payment">Manage Payments</a>
+      </article>
+    </div>
+  </section>
 
-<main class="section">
-<div class="container grid-dashboard">
-<!-- Sidebar: Dates & News -->
-<aside class="card sidebar">
-<h2>Upcoming Care</h2>
-<ul class="events" id="eventsList">
-<!-- Populated from app.js (demo data); replace with CMS/API later -->
-</ul>
-<h2>News</h2>
-<ul class="news" id="newsList"></ul>
-</aside>
+  <section id="care" class="section alt">
+    <div class="container">
+      <h2>Care &amp; Vet Records</h2>
+      <form id="careForm" class="card">
+        <label>
+          <span>Primary Vet Clinic</span>
+          <input type="text" name="vetClinic" placeholder="Clinic name">
+        </label>
+        <label>
+          <span>Vet Phone</span>
+          <input type="tel" name="vetPhone" placeholder="(555) 123-4567">
+        </label>
+        <label>
+          <span>Feeding / Supplements</span>
+          <textarea name="feeding" rows="3" placeholder="Hay, grain, supplements, frequencies..."></textarea>
+        </label>
+        <label>
+          <span>Turnout Notes</span>
+          <textarea name="turnout" rows="3" placeholder="e.g., Limited turnout for sore leg; stall rest on vet orders..."></textarea>
+        </label>
+        <label>
+          <span>Medications</span>
+          <textarea name="meds" rows="3" placeholder="Name, dose, schedule, administering instructions..."></textarea>
+        </label>
+        <div class="form-row">
+          <label>
+            <span>Emergency Contact</span>
+            <input type="text" name="emergencyContact" placeholder="Name">
+          </label>
+          <label>
+            <span>Emergency Phone</span>
+            <input type="tel" name="emergencyPhone" placeholder="(555) 222-3333">
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Save Care Profile</button>
+      </form>
+    </div>
+  </section>
 
+  <section id="uploads" class="section">
+    <div class="container">
+      <h2>Upload Forms &amp; Records</h2>
+      <div class="card">
+        <p>Accepted: PDF, JPG, PNG (max 10 MB each). Please do not upload card/bank info.</p>
+        <input id="fileInput" type="file" multiple accept=".pdf,.jpg,.jpeg,.png">
+        <div id="fileList" class="checklist" style="margin-top: 12px;"></div>
+      </div>
+    </div>
+  </section>
 
-<!-- Main: Payments -->
-<section class="card">
-<h2>Payments</h2>
-<div class="payment-grid">
-<form id="boardPaymentForm" class="payment-card">
-<h3>Monthly Board</h3>
-<label>
-<span>Select horse</span>
-<select id="horseSelect" required>
-<option value="" disabled selected>Select…</option>
-<option>Buddy</option>
-<option>Star</option>
-<option>Daisy</option>
-</select>
-</label>
-<label>
-<span>Board plan</span>
-<select id="boardPlan" required>
-<option value="" disabled selected>Select…</option>
-<option value="600">Pasture — $600</option>
-<option value="850">Stall — $850</option>
-<option value="1000">Stall + Training — $1,000</option>
-</select>
-</label>
-<label>
-<span>Month</span>
-<input id="boardMonth" type="month" required />
-</label>
-<button class="btn btn-primary" type="submit">Pay Monthly Board</button>
-<p class="hint">You’ll be redirected to our secure payment page.</p>
-</form>
+  <section id="billing" class="section alt">
+    <div class="container">
+      <h2>Current Charges</h2>
+      <div class="card" id="chargesCard">
+        <div id="chargesTable"></div>
+        <p style="margin-top:12px;">Next board due: <strong id="nextDue">—</strong></p>
+        <p>Total due: <strong id="totalDue">$0.00</strong></p>
+      </div>
+    </div>
+  </section>
 
+  <section id="payment" class="section">
+    <div class="container">
+      <h2>Payment Methods</h2>
+      <div class="card">
+        <p><strong>Security note:</strong> Card data is handled by a PCI-compliant processor. We never store raw card numbers—only a secure token.</p>
+        <div id="pmList" class="checklist"></div>
+        <button id="addPM" class="btn btn-primary" type="button">Add Payment Method</button>
+        <div style="margin-top:12px;">
+          <label style="display:inline-flex; gap:8px; align-items:center;">
+            <input id="autopay" type="checkbox"> Enable AutoPay for monthly board
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="services" class="section alt">
+    <div class="container">
+      <h2>Upcoming Services</h2>
+      <div class="card">
+        <p>Based on the barn’s admin schedule and your preferences. Opt-in to barn farrier or use your own.</p>
+        <div id="serviceList" class="checklist"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2025</span> <span id="brandNameFooter">True North Equestrian Center</span>. All rights reserved.</p>
+      <a href="dashboard.html" class="footer-link">Boarder Login</a>
+    </div>
+  </footer>
+
+<script>
+// Simulated session data (replace with real values after login)
+const session = {{
+  boarderId: "B-10294",
+  boarderName: "Alex Morgan",
+  horseName: "North Star",
+}};
+
+// Fee schedule from admin (DB)
+const feeSchedule = {{
+  monthly_board: 650.00,
+  farrier_trim: 65.00,
+  farrier_shoeing: 140.00,
+  late_fee: 25.00
+}};
+
+// Upcoming services defined by admin
+const barnServices = [
+  {{ type: "Farrier (Trim)", date: (new Date(new Date().getFullYear(), new Date().getMonth()+1, 12)).toISOString().slice(0,10), feeKey: "farrier_trim" }},
+  {{ type: "Vet (Vaccinations)", date: (new Date(new Date().getFullYear(), new Date().getMonth()+2, 3)).toISOString().slice(0,10), info: "Spring core vaccines schedule" }}
+];
+
+// Ledger
+let charges = [
+  {{ desc: "Monthly Board", amount: feeSchedule.monthly_board, date: new Date().toISOString().slice(0,10) }}
+];
+
+// Tokenized PMs
+let paymentMethods = [
+  {{ brand: "Visa", last4: "4242", exp: "06/27", default: true, token: "pm_tok_123" }}
+];
+
+function fmtMoney(n) {{ return '$' + n.toFixed(2); }}
+
+function initDashboard() {{
+  document.getElementById('boarderName').textContent = session.boarderName;
+  document.getElementById('boarderId').textContent = '#' + session.boarderId;
+
+  renderCharges();
+
+  const today = new Date();
+  const nextDue = new Date(today.getFullYear(), today.getMonth()+1, 1);
+  document.getElementById('nextDue').textContent = nextDue.toDateString();
+
+  renderPMs();
+
+  const ap = document.getElementById('autopay');
+  ap.addEventListener('change', () => {{
+    alert(ap.checked ? 'AutoPay enabled. Payments will run on due date.' : 'AutoPay disabled.');
+  }});
+
+  document.getElementById('addPM').addEventListener('click', () => {{
+    const last4 = String(Math.floor(1000 + Math.random()*9000));
+    paymentMethods.push({{ brand: "Visa", last4, exp: "12/29", default: paymentMethods.length === 0, token: 'pm_tok_' + Date.now() }});
+    renderPMs();
+    alert('Payment method added (tokenized).');
+  }});
+
+  const input = document.getElementById('fileInput');
+  const list = document.getElementById('fileList');
+  input.addEventListener('change', () => {{
+    list.innerHTML = '';
+    [...input.files].forEach(f => {{
+      const li = document.createElement('div');
+      li.textContent = f.name + ' (' + Math.round(f.size/1024) + ' KB)';
+      list.appendChild(li);
+    }});
+  }});
+
+  renderServices();
+}}
+
+function renderCharges() {{
+  const host = document.getElementById('chargesTable');
+  const total = charges.reduce((sum, c) => sum + c.amount, 0);
+  let html = '<table class="table" style="width:100%; border-collapse:collapse;">';
+  html += '<thead><tr><th style="text-align:left;">Description</th><th style="text-align:left;">Date</th><th style="text-align:right;">Amount</th></tr></thead><tbody>';
+  charges.forEach(c => {{
+    html += '<tr><td>' + c.desc + '</td><td>' + c.date + '</td><td style="text-align:right;">' + fmtMoney(c.amount) + '</td></tr>';
+  }});
+  html += '</tbody></table>';
+  host.innerHTML = html;
+  document.getElementById('totalDue').textContent = fmtMoney(total);
+}}
+
+function renderPMs() {{
+  const host = document.getElementById('pmList');
+  host.innerHTML = '';
+  paymentMethods.forEach((pm, i) => {{
+    const row = document.createElement('div');
+    row.textContent = '• ' + pm.brand + ' •••• ' + pm.last4 + ' (exp ' + pm.exp + ')' + (pm.default ? ' — Default' : '');
+    host.appendChild(row);
+  }});
+}}
+
+function renderServices() {{
+  const host = document.getElementById('serviceList');
+  host.innerHTML = '';
+  barnServices.forEach((svc, idx) => {{
+    const wrapper = document.createElement('div');
+    const fee = svc.feeKey ? feeSchedule[svc.feeKey] : null;
+    wrapper.innerHTML = ''
+      + '<div style="display:flex; gap:8px; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(0,0,0,0.06)">'
+      +   '<div>'
+      +     '<strong>' + svc.type + '</strong>'
+      +     '<div>Date: ' + svc.date + '</div>'
+      +     (fee ? '<div>Estimated charge: <strong>' + fmtMoney(fee) + '</strong></div>' : '')
+      +   '</div>'
+      +   '<div>'
+      +     '<button class="btn btn-outline" data-index="' + idx + '" data-action="optin">Opt In</button>'
+      +   '</div>'
+      + '</div>';
+    host.appendChild(wrapper);
+  }});
+
+  host.addEventListener('click', (e) => {{
+    const btn = e.target.closest('button[data-action="optin"]');
+    if (!btn) return;
+    const idx = +btn.dataset.index;
+    const svc = barnServices[idx];
+    if (svc.feeKey && feeSchedule[svc.feeKey]) {{
+      charges.push({{ desc: svc.type + ' (scheduled)', amount: feeSchedule[svc.feeKey], date: svc.date }});
+      renderCharges();
+      alert(svc.type + ' added to your upcoming charges.');
+      btn.disabled = true;
+      btn.textContent = 'Added';
+    }} else {{
+      alert(svc.type + ' RSVP recorded.');
+      btn.disabled = true;
+      btn.textContent = 'RSVP\'d';
+    }}
+  }});
+}}
+
+document.addEventListener('DOMContentLoaded', initDashboard);
+</script>
+<script src="./app.js?v=4"></script>
+</body>
 </html>
