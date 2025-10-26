@@ -61,7 +61,7 @@ img{max-width:100%; display:block}
 
 /* Cards/Grid */
 .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
-}
+
 /* === ADMIN PAGE UPGRADE === */
 body.dashboard {
   background: linear-gradient(180deg, #0c1017 0%, #121827 100%);
@@ -313,4 +313,32 @@ body.dashboard {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+/* === Mobile-first improvements (added by assistant) === */
+.grid-3 { grid-template-columns: 1fr; }
+
+@media (min-width: 721px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Tidy up section spacing on small screens */
+@media (max-width: 720px) {
+  .section { padding: 48px 0; }
+  .hero-content { padding: 64px 0; }
+  .header-inner { flex-wrap: wrap; }
+  .nav-toggle { display: block; }
+  .nav { gap: 12px; }
+}
+
+/* Optional: collapse nav by default on very small screens.
+   Note: This assumes app.js toggles [aria-expanded] on .nav-toggle and toggles a .nav--open class on .nav */
+@media (max-width: 720px) {
+  .nav { display: none; flex-direction: column; width: 100%; }
+  .nav.nav--open { display: flex; }
+  .nav-link { padding: 10px 0; }
 }
