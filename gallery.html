@@ -9,20 +9,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold brand-accent" href="index.html">True North Stable</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+   <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom shadow-sm" aria-label="Primary Navigation">
+    <div>
+      <img class="brand-logo" src="images/TrueNorthLogo.png" alt="True North Business Logo" style="height: 1in"></img>
+      
+      <!-- Optional logo image -->
+      <span class="brand-name" id="brandName">True North Equestrian Center</span>
+    </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html#boarding">Boarding</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#facilities">Facilities</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#trainers">Trainers</a></li>
-          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#boarding">Boarding</a></li>
+          <li class="nav-item"><a class="nav-link" href="#facilities">Facilities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trainers">Trainers</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-brand" href="#visit">Schedule a Visit</a></li>
         </ul>
       </div>
     </div>
