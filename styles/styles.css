@@ -1,344 +1,94 @@
+/* ==============================
+   True North Stable — Custom CSS
+   External-only by design; no inline styles in HTML.
+   ============================== */
+
+/* Base & variables */
 :root{
---bg: #0b0c10;
---surface: #111218;
---card: #141622;
---muted: #aeb4c0;
---text: #e9ecf1;
---brand: #6fb1ff; /* soft blue */
---brand-strong:#3d8bfd;
---accent: #9ad67b; /* soft green */
---danger: #ff7b7b;
---ring: 0 0 0 3px rgba(111,177,255,.35);
---radius: 16px;
---shadow: 0 10px 30px rgba(0,0,0,0.35);
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-color:var(--text); background:linear-gradient(180deg, #0b0c10 0%, #0e1220 100%);
-}
-img{max-width:100%; display:block}
-
-
-.container{width:min(1120px, 92vw); margin:0 auto}
-.section{padding:64px 0}
-.section.alt{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));}
-
-
-/* Header */
-.site-header{position:sticky; top:0; backdrop-filter:saturate(1.2) blur(10px); background:rgba(10,12,18,.5); border-bottom:1px solid rgba(255,255,255,.06); z-index:50}
-.header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
-.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text)}
-.brand-mark{font-size:22px}
-.brand-name{font-weight:700; letter-spacing:.2px}
-.nav{display:flex; align-items:center; gap:18px}
-.nav-link{color:var(--muted); text-decoration:none; font-weight:500}
-.nav-link:hover{color:var(--text)}
-.nav-toggle{display:none; background:none; border:none; color:var(--text); font-size:22px}
-
-
-/* Buttons */
-.btn{appearance:none; border:none; cursor:pointer; font-weight:600; padding:10px 14px; border-radius:calc(var(--radius) - 6px); box-shadow:0 1px 0 rgba(255,255,255,.06) inset; transition:.2s ease}
-.btn-lg{padding:14px 18px; font-size:1.05rem}
-.btn-primary{background:linear-gradient(180deg, var(--brand), var(--brand-strong)); color:#0a0c10}
-.btn-primary:hover{filter:brightness(1.05)}
-.btn-outline{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.16)}
-.btn-outline:hover{background:rgba(255,255,255,.06)}
-.btn-quiet{background:transparent; color:var(--muted)}
-.btn-quiet:hover{color:var(--text)}
-
-
-/* Hero */
-.hero{position:relative; min-height:70vh; display:grid; align-items:center}
-.hero-media{position:absolute; inset:0; overflow:hidden; z-index:-1}
-.hero-media img{width:100%; height:100%; object-fit:cover; filter:grayscale(.1) brightness(.55) saturate(1.1)}
-.hero-content{padding:96px 0}
-.hero h1{font-size:clamp(2rem, 4.5vw, 3.2rem); line-height:1.15; margin:0 0 16px}
-.hero p{max-width:56ch; color:var(--muted); font-size:1.1rem}
-.hero-cta{display:flex; gap:12px; margin-top:18px}
-
-
-/* Cards/Grid */
-.grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
-
-/* === ADMIN PAGE UPGRADE === */
-body.dashboard {
-  background: linear-gradient(180deg, #0c1017 0%, #121827 100%);
-  color: var(--text);
+  --brand: #2F5D3A;        /* forest */
+  --brand-dark: #264b2f;
+  --sand: #E8DCC9;         /* warm sand */
+  --ink: #222;
+  --paper: #FAF7F2;
 }
 
-/* Headings */
-.card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  padding-bottom: 6px;
+html, body{
+  color: var(--ink);
+  background: var(--paper);
 }
 
-.card h3 {
-  color: var(--brand);
-}
+/* Layout helpers */
+.pt-nav{ padding-top: 72px; } /* accounts for fixed-top navbar */
 
-/* Admin grid layout */
-.grid-admin {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 24px;
-  align-items: start;
-}
-
-/* Cards */
-.card {
-  position: relative;
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-  padding: 24px;
-  transition: all .25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-}
-
-/* Buttons */
-.btn {
-  border-radius: 12px;
-  transition: background .2s ease, transform .1s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, var(--brand) 0%, var(--brand-strong) 100%);
-  color: #0a0c10;
-  border: none;
-}
-
-.btn-outline {
-  border: 1px solid rgba(255,255,255,.2);
-  background: transparent;
-  color: var(--text);
-}
-
-.btn-outline:hover {
-  background: rgba(255,255,255,.08);
-}
-
-.btn-danger {
-  background: linear-gradient(90deg, #ff7575 0%, #ff4b4b 100%);
+/* Brand accents */
+.brand-accent{ color: var(--brand) !important; letter-spacing: 0.3px; }
+.btn-brand{
+  background-color: var(--brand);
   color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
 }
-
-/* Inputs & Labels */
-.admin-form label span {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.admin-form input, .admin-form select, .admin-form textarea {
-  background: #0e121a;
-  border: 1px solid rgba(255,255,255,.15);
-  color: var(--text);
-  border-radius: 8px;
-  padding: 10px 12px;
-  font-size: 1rem;
-  width: 100%;
-  outline: none;
-  transition: all .2s ease;
-}
-
-.admin-form input:focus, .admin-form select:focus, .admin-form textarea:focus {
-  border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(111,177,255,.25);
-}
-
-/* Lists & Tables */
-.table .row, .list .row {
-  background: rgba(255,255,255,.04);
-  border-radius: 10px;
-  padding: 10px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background .2s ease;
-}
-
-.table .row:hover, .list .row:hover {
-  background: rgba(255,255,255,.08);
-}
-
-/* Pills */
-.pill {
-  background: rgba(255,255,255,.08);
-  color: var(--text);
-  font-size: .9rem;
-  padding: 6px 12px;
-  border-radius: 999px;
-}
-
-/* Form rows */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-
-.hint {
-  color: var(--muted);
-  font-size: .85rem;
-  margin-top: 8px;
-}
-
-/* Subtle fade-in animation for admin cards */
-.card {
-  opacity: 0;
-  transform: translateY(12px);
-  animation: fadeInUp .5s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Section spacing */
-.section .container {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-@media (max-width: 720px) {
-  .grid-admin {
-    grid-template-columns: 1fr;
-  }
-}
-/* === Sub-navigation (below hero) === */
-.subnav {
-  position: relative;
-  z-index: 5;
-  border-top: 1px solid rgba(255,255,255,.07);
-  border-bottom: 1px solid rgba(255,255,255,.07);
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-  backdrop-filter: saturate(1.2) blur(4px);
-}
-
-.subnav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 0;
-}
-
-.subnav-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.subnav-brand img {
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.1);
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
-}
-
-.subnav-brand span {
-  font-weight: 700;
-  letter-spacing: .2px;
-}
-
-.subnav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.subnav-links a {
-  display: inline-block;
-  padding: 8px 10px;
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 10px;
-  border: 1px solid transparent;
-}
-
-.subnav-links a:hover {
-  color: var(--text);
-  background: rgba(255,255,255,.06);
-  border-color: rgba(255,255,255,.1);
-}
-
-/* Make primary CTA in subnav slightly tighter */
-.subnav .btn.btn-primary { padding: 8px 12px; }
-
-/* Responsive */
-@media (max-width: 960px) {
-  .subnav-inner { flex-wrap: wrap; gap: 10px; }
-  .subnav-links { flex-wrap: wrap; justify-content: flex-start; }
-}
-
-@media (max-width: 600px) {
-  .subnav-brand img { width: 44px; height: 44px; border-radius: 10px; }
-  .subnav-links { gap: 10px; }
-  .subnav-links a { padding: 7px 9px; }
-}
-/* Control logo size inside header */
 .brand-logo {
   width: 1in;
   height: 1in;
-  object-fit: contain; /* or 'cover' if you want it cropped square */
   border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.308);
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
+.btn-brand:hover{ background-color: var(--brand-dark); color: #fff; }
 
-/* Keep spacing consistent with text */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Section titles */
+.section-title{
+  color: #111;
+  border-left: 6px solid var(--brand);
+  padding-left: 0.6rem;
+  margin-bottom: 1rem;
 }
 
-/* === Mobile-first improvements (added by assistant) === */
-.grid-3 { grid-template-columns: 1fr; }
-
-@media (min-width: 721px) {
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+/* Icons */
+.icon-wrap{
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  border-radius: 0.75rem;
+  background: var(--sand);
+  color: var(--brand);
 }
 
-@media (min-width: 1024px) {
-  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+/* Cards */
+.card{
+  border: 0;
+  border-radius: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.08);
 }
 
-/* Tidy up section spacing on small screens */
-@media (max-width: 720px) {
-  .section { padding: 48px 0; }
-  .hero-content { padding: 64px 0; }
-  .header-inner { flex-wrap: wrap; }
-  .nav-toggle { display: block; }
-  .nav { gap: 12px; }
+/* Carousel caption: legibility overlay */
+.caption-bg{
+  background: rgba(0,0,0,0.45);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
 }
 
-/* Optional: collapse nav by default on very small screens.
-   Note: This assumes app.js toggles [aria-expanded] on .nav-toggle and toggles a .nav--open class on .nav */
-@media (max-width: 720px) {
-  .nav { display: none; flex-direction: column; width: 100%; }
-  .nav.nav--open { display: flex; }
-  .nav-link { padding: 10px 0; }
+/* Gallery */
+.gallery img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  display: block;
 }
+
+/* Footer */
+footer .small{ color: #d8d8d8; 
+}
+
+.carousel-item img {
+  height: 75vh;
+  object-fit: cover;
+  width: 100%;
+}
+

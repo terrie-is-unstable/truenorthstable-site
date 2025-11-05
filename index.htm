@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>True North Stable — Boarding & Facilities</title>
+  <meta name="description" content="True North Stable offers thoughtful horse boarding with clean stalls, daily turnout, safe footing, and a welcoming barn community. Outside trainers welcome by appointment." />
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome 6 (CDN) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS (external only; no inline styles per instructor preference) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom shadow-sm" aria-label="Primary Navigation">
+    <div>
+      <img class="brand-logo" src="images/TrueNorthLogo.png" alt="True North Business Logo" style="height: 1in"></img>
+      
+      <!-- Optional logo image -->
+      <span class="brand-name" id="brandName">True North Equestrian Center</span>
+    </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#boarding">Boarding</a></li>
+          <li class="nav-item"><a class="nav-link" href="#facilities">Facilities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trainers">Trainers</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.htm">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-brand" href="#visit">Schedule a Visit</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel (Hero Section) -->
+  <header class="pt-nav" aria-label="Featured images">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/hero1farmview.jpg" class="d-block w-100" alt="Barn with arena and pastures in the background">
+          <div class="carousel-caption d-none d-md-block caption-bg">
+            <h1 class="display-6 fw-semibold">Horsemanship with Heart</h1>
+            <p>Clean stalls, quality feed, daily turnout, and a welcoming community.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/hero2outdoor.jpg" class="d-block w-100" alt="Outdoor arean set up for pole work.">
+          <div class="carousel-caption d-none d-md-block caption-bg">
+            <h2 class="h3">Facilities include</h2>
+            <p>Indoor/outdoor arenas, Observation room, and Equipment to maintain optimal health.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/hero3outdoorrainbow.jpg" class="d-block w-100" alt="Outdoor arena with pasture in background">
+          <div class="carousel-caption d-none d-md-block caption-bg">
+            <h2 class="h3">Community & Care</h2>
+            <p>Safety-first culture for riders and horses.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Intro Cards -->
+    <section class="py-5" aria-label="Overview">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrap mb-3"><i class="fa-solid fa-horse"></i></div>
+                <h3 class="h5">Boarding</h3>
+                <p>Well-bedded stalls, quality hay & grain, fresh water, and individual or small-group turnout focused on safety and well‑being.</p>
+                <a class="btn btn-link p-0" href="#boarding" aria-label="Learn more about boarding">Learn more <i class="fa-solid fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrap mb-3"><i class="fa-solid fa-warehouse"></i></div>
+                <h3 class="h5">Facilities</h3>
+                <p>Indoor/outdoor arenas with maintained footing, tidy aisles, organized tack storage, and convenient trailer storage by arrangement for a fee.</p>
+                <a class="btn btn-link p-0" href="#facilities" aria-label="See facility details">See details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrap mb-3"><i class="fa-solid fa-people-group"></i></div>
+                <h3 class="h5">Trainers & Clinics</h3>
+                <p>We don’t offer in-house training. Boarders ride with their own trainer. Visiting trainers and clinicians are welcome with prior approval.</p>
+                <a class="btn btn-link p-0" href="#trainers" aria-label="View trainer policy">Policy <i class="fa-solid fa-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Boarding Section -->
+    <section id="boarding" class="py-5 bg-light" aria-labelledby="boarding-title">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-6">
+            <h2 id="boarding-title" class="section-title h3">Boarding</h2>
+            <p>Our care emphasizes consistency and communication. Stalls are cleaned daily and turnout is planned with temperament, footing, and weather in mind. Owner-provided supplements are fed on request.</p>
+            <ul class="feature-list">
+              <li><i class="fa-regular fa-square-check me-2 text-success"></i>Daily stall cleaning and fresh bedding as needed</li>
+              <li><i class="fa-regular fa-square-check me-2 text-success"></i>Quality hay & grain; clean, fresh water</li>
+              <li><i class="fa-regular fa-square-check me-2 text-success"></i>Individual or small-group turnout</li>
+              <li><i class="fa-regular fa-square-check me-2 text-success"></i>Blanketing by schedule/season</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img class="img-fluid rounded-3 shadow-sm" src="images/boardingrelaxinginstall.jpg" alt="Horse in a clean, well-bedded stall">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="py-5" aria-labelledby="facilities-title">
+      <div class="container">
+        <div class="row align-items-center g-4 flex-lg-row-reverse">
+          <div class="col-12 col-lg-6">
+            <h2 id="facilities-title" class="section-title h3">Facilities & Amenities</h2>
+            <p>Comfortable, practical spaces for horses and riders. Safe footing, tidy aisles, and organized storage help everyone focus on good horsemanship.</p>
+            <ul class="feature-list">
+              <li><i class="fa-regular fa-square-check me-2 text-success"></i>Indoor and/or outdoor arenas with maintained footing</li>
+              <li><i class="fa-regular fa-square-check me-2 text-success"></i>Round pen and designated lunging areas (where applicable)</li>
+              <li><i class="fa-regular fa-square-check me-2 text-success"></i>Tack rooms and lockers</li>
+              <li><i class="fa-regular fa-square-check me-2 text-success"></i>Trailer parking by arrangement</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img class="img-fluid rounded-3 shadow-sm" src="images/clinicsindoortraining.jpg" alt="Indoor riding arena with safe footing">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="py-5 bg-light" aria-labelledby="trainers-title">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-6">
+            <h2 id="trainers-title" class="section-title h3">Trainers & Clinics</h2>
+            <p>True North Stable does not provide in-house training services. Boarders typically ride with their own trainer. Visiting trainers and clinicians are welcome with prior approval.</p>
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <div class="p-3 border rounded-3 h-100">
+                  <strong>Requirements</strong>
+                  <ul class="mt-2 mb-0">
+                    <li>Proof of insurance</li>
+                    <li>Signed facility waiver</li>
+                    <li>Advance arena booking</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="p-3 border rounded-3 h-100">
+                  <strong>Etiquette</strong>
+                  <ul class="mt-2 mb-0">
+                    <li>Yield to lesson traffic</li>
+                    <li>Follow posted rules</li>
+                    <li>Clean up after use</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <img class="img-fluid rounded-3 shadow-sm" src="images/boardingarenawork.jpg" alt="Rider and trainer working in the arena">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit CTA -->
+    <section id="visit" class="py-5 bg-light" aria-labelledby="visit-title">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-7">
+            <h2 id="visit-title" class="section-title h3">Schedule a Barn Tour</h2>
+            <p>Come meet the herd and see the facilities. We’ll discuss your horse’s needs, turnout preferences, feed, supplements, and blanketing schedule.</p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-calendar-check me-2 text-success"></i>Weekdays and weekends by appointment</li>
+              <li><i class="fa-solid fa-clock me-2 text-success"></i>Approx. 30–45 minutes</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="p-4 bg-white border rounded-3">
+              <form action="#" method="post">
+                <div class="mb-3">
+                  <label class="form-label" for="name">Name</label>
+                  <input class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your horse and preferred visit times"></textarea>
+                </div>
+                <button class="btn btn-brand w-100" type="submit"><i class="fa-solid fa-paper-plane me-2"></i>Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-lg-6">
+            <h2 id="contact-title" class="section-title h3">Contact</h2>
+            <p><i class="fa-solid fa-location-dot me-2"></i>2857 Henry Road, Jackson, Mi. 49201 • Tours by appointment</p>
+            <p><i class="fa-solid fa-phone me-2"></i>(517) 262-0013</p>
+            <p><i class="fa-solid fa-envelope me-2"></i><a href="mailto:tnecbarnmail@gmail.com">tnecbarnmail@gmail.com</a></p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="d-flex gap-3">
+              <a class="btn btn-outline-dark" href="https://www.facebook.com/photo/?fbid=525100996281741&set=a.525100952948412" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a class="btn btn-outline-dark" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-light">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      <div>© <span id="year"></span> True North Equestrian Center • Jackson, Michigan</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Minimal progressive enhancement only (allowed): set current year in footer.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
